@@ -25,10 +25,10 @@ public class Kasir {
         for (int i = 0; i < daftarMeja.length; i++) {
             Meja meja = daftarMeja[i];
             if (meja.isKosong()) {
-                System.out.println("Meja " + meja.getNomorMeja() + ": Kosong");
+                System.out.println("Meja " + meja.getNomorMeja() + " (Kosong)");
             } else {
                 Pelanggan pelanggan = meja.getPelanggan();
-                System.out.println("Meja " + meja.getNomorMeja() + ": Terisi oleh pelanggan " + pelanggan.getNama());
+                System.out.println("Meja " + meja.getNomorMeja() + " (terisi oleh pelanggan " + pelanggan.getNama()+")" );
             }
         }
     }
@@ -41,11 +41,10 @@ public class Kasir {
         Meja meja = daftarMeja[nomorMeja - 1];
     if (meja.isKosong()) {
         meja.setPelanggan(pelanggan);
-        System.out.println("Pelanggan " + pelanggan.getNama() + " ditambahkan pada Meja " + nomorMeja);
     } else {
-        System.out.println("Maaf, Meja " + nomorMeja + " sudah ada pelanggan.");
+        System.out.println("Meja sudah terisi");
     }
-    }
+}
     
     // menambah pesanan menu pada nomor meja
     // jika menu tidak ada dalam daftar maka tampilkan "Menu is null" 
@@ -54,11 +53,10 @@ public class Kasir {
         Meja meja = daftarMeja[nomorMeja - 1];
     if (!meja.isKosong()) {
         meja.setMenu(menu);
-        System.out.println("Pesanan " + menu.getNama() + " ditambahkan pada Meja " + nomorMeja);
     } else {
-        System.out.println("Maaf, Meja " + nomorMeja + " belum ada pelanggan.");
+        System.out.println("Meja belum terisi oleh pelanggan");
     }
-    }
+}
 
     // Menghapus pelanggan 
     public void hapusPelanggan(int nomorMeja) {
@@ -141,7 +139,7 @@ public class Kasir {
                     int nomorMejaTambahPelanggan = scanner.nextInt();
                     scanner.nextLine();
                     System.out.print("Masukkan nama pelanggan: ");
-                    String namaPelanggan = scanner.nextLine();
+                    String namaPelanggan = scanner.nextLine().toUpperCase();
                     Pelanggan pelanggan = new Pelanggan(namaPelanggan);
                     tambahPelanggan(nomorMejaTambahPelanggan, pelanggan);
                     break;
@@ -195,9 +193,9 @@ public class Kasir {
                     int nomorMejaHitungHarga = scanner.nextInt();
                     int totalHarga = hitungHargaPesanan(nomorMejaHitungHarga);
                     if (totalHarga > 0) {
-                        System.out.println("Total harga pesanan di Meja " + nomorMejaHitungHarga + " adalah: Rp" + totalHarga);
+                        System.out.println("Harga pesanan di meja " + nomorMejaHitungHarga + " adalah " + totalHarga);
                     } else {
-                        System.out.println("Belum ada pesanan di Meja " + nomorMejaHitungHarga + ".");
+                        System.out.println("Meja " + nomorMejaHitungHarga + " tidak memiliki pesanan");
                     }
                     break;
                 case 6:
