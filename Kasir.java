@@ -132,9 +132,14 @@ public class Kasir {
             scanner.nextLine();  
             switch (pilihan) {
                 case 1:
+                    // menampilkan daftar meja dengan method yang sudah ada
+                    //EDIT DISINI
                     tampilkanDaftarMeja();
                     break;
                 case 2:
+                    // tampilkan pesan untuk input nomor meja dan nama pelanggan untuk digunakan pada method
+                    // jangan lupa instansiasi Pelanggan dengan nama pelanggan sesuai input
+                    // EDIT DISINI
                     System.out.print("Masukkan nomor meja: ");
                     int nomorMejaTambahPelanggan = scanner.nextInt();
                     scanner.nextLine();
@@ -184,11 +189,17 @@ public class Kasir {
                     }
                     break;
                 case 4:
+                    // untuk menghapus pelanggan pada meja tertentu
+                    // tampilkan pesan untuk memasukkan nomor meja yang akan dihapus untuk digunakan pada method hapusPelanggan()
+                    // EDIT DISINI
                     System.out.print("Masukkan nomor meja yang akan dihapus pelanggannya: ");
                     int nomorMejaHapusPelanggan = scanner.nextInt();
                     hapusPelanggan(nomorMejaHapusPelanggan);
                     break;
                 case 5:
+                    // Untuk melihat total harga pesanan pada meja tertentu
+                    // tampilkan pesan untuk memasukkan nomor meja 
+                    // jangan lupa membedakan keluaran apabila pelanggan belum memesan apapun / total harga 0
                     System.out.print("Masukkan nomor meja: ");
                     int nomorMejaHitungHarga = scanner.nextInt();
                     int totalHarga = hitungHargaPesanan(nomorMejaHitungHarga);
@@ -199,6 +210,9 @@ public class Kasir {
                     }
                     break;
                 case 6:
+                    // untuk melihat pesanan pada meja tertentu
+                    // tampilkan pesan untuk memasukkan nomor meja 
+                    // EDIT DISINI
                     System.out.print("Masukkan nomor meja: ");
                     int nomorMejaTampilkanPesanan = scanner.nextInt();
                     scanner.nextLine();
